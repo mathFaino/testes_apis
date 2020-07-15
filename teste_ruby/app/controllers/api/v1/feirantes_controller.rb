@@ -1,6 +1,7 @@
 module Api
   module V1
     class FeirantesController < ApplicationController
+      before_action :require_login
       # Mostrar todos os feirantes
       def index
         feirantes = Feirante.order('created_at DESC')
